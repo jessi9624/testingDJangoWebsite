@@ -1,5 +1,6 @@
 from django.test import TestCase
 from store.models.customer import Customer
+from store.models.Customer_form import Contact1
 
 # Create your tests here.
 class Basictest(TestCase):
@@ -8,6 +9,14 @@ class Basictest(TestCase):
     
     def test_model(self):
         d=self.blog
-        self.assertTrue(isinstance(d,Customer))
-        self.assertEqual(str(d))
+        self.assertTrue(isinstance(d, Customer))
+        self.assertEqual(str(d), 'abc')
+
+    def Contact1(self):
+        self.blog= Contact1.objects.create(Relation = 'Brother', name='hetal', dob='09/12/1992' , category='Mobiles' , customer= '24')
+    def test_contact_module(self):
+        e=self.blog
+        self.assertTrue(isinstance(e, Contact1 ))
+        self.assertEqual(str(e), 'Brother')
+
         
